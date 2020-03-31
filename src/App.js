@@ -12,7 +12,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* <p>{screen}</p> */}
       <Names
         screen={screen}
         order={() => setScreen(2)}
