@@ -1,14 +1,11 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 function Address(props) {
-
-useEffect(() => document.getElementById('address').focus() ,[])
-
     return (
-        <div className={props.screen === 2 ? 'Address animated bounceInRight' : 'hidden'}>
+        <div className='Address animated bounceInRight' >
             <label htmlFor="dir">Dirección</label>
             <input
-                id='address'
+                id='focus'
                 className='address'
                 type="text"
                 placeholder='Calle 01 sur #01-01'

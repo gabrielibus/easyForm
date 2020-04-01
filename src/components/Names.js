@@ -1,24 +1,23 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 function Names(props) {
 
     return (
-        <div className={props.screen === 1 ? 'Names animated bounceInRight' : 'hidden'}>
+        <div className='Names animated bounceInRight'>
             <label htmlFor="names">Nombres</label>
-            <input id='inputName'
+            <input id='focus'
                 className='name'
                 type="text"
                 placeholder='Juan'
                 onChange={(event) => props.onChange(event)} />
             <label htmlFor="lastNames">Apellidos</label>
             <input
-                id='inputLastName'
                 className='lastName'
                 type="text"
                 placeholder='Pérez'
                 onChange={(event) => props.onChange(event)} />
             <div className='btnDiv'>
-                <button onClick={props.order}>next</button>
+                <button onClick={props.onClick}>next</button>
             </div>
         </div>
     )

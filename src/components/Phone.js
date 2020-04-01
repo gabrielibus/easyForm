@@ -3,18 +3,17 @@ import React from 'react'
 function Phone(props) {
 
     return (
-        <div className={props.screen === 3 ? 'Phone animated bounceInRight' : 'hidden'}>
+        <div className='Phone animated bounceInRight'>
             <label
                 htmlFor="phone1">Teléfono movil</label>
             <input
-                id='phone1'
+                id='focus'
                 className='phone1'
                 type="text"
                 placeholder='300-5555555'
                 onChange={(event) => props.onChange(event)} />
             <label htmlFor="phone2">Teléfono fijo</label>
             <input
-                id='phone2'
                 className='phone2'
                 type="text"
                 placeholder='7775555'
