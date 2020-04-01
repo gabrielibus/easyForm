@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles/App.css';
 import Names from './components/Names'
 import Address from './components/Address'
@@ -13,12 +13,16 @@ const setData = (event) => {
   setDatos({...datos, [event.target.className]: event.target.value})
 }
 
+useEffect(() => document.getElementById('inputName').focus() ,[screen === 1])
+useEffect(() => document.getElementById('address').focus() , [screen === 2])
+useEffect(() => document.getElementById('phone1').focus() , [screen === 3])
+
   return (
     <div className="App">
       <Names
         screen={screen}
         order={() => setScreen(2)}
-        onChange={(event) => setData(event)}
+        onChange={(event) => {setData(event)}}
       />
       <Address
         screen={screen}
