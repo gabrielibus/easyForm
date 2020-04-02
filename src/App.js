@@ -20,27 +20,25 @@ function App() {
   }
 
   const finish = async () => {
-    // window.location.reload(true)
     var myHeaders = new Headers()
     myHeaders.append("Content-Type", "application/json")
     var raw = JSON.stringify(datos)
-
+    
     var requestOptions = {
       method: "POST",
       headers: myHeaders,
       body: raw,
       redirect: "follow"
     }
-
+    
     fetch(`${url}post/`, requestOptions)
-      .then(response => response.text())
-      .then(result => console.log(result))
-      .catch(error => console.log("error", error))
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log("error", error))
+    window.location.reload(true)
   }
 
-  useEffect(() => document.getElementById("focus").focus(), [
-    screen === (1 || 2 || 3)
-  ])
+  useEffect(() => document.getElementById("focus").focus(), [screen ===  2 || 3])
 
   return (
     <div className='App'>
@@ -48,7 +46,6 @@ function App() {
         <Names
           onClick={() => {
             setScreen(2)
-            finish()
           }}
           onChange={event => {
             setData(event)
