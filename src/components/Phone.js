@@ -3,8 +3,8 @@ import React from 'react'
 function Phone(props) {
 
     return (
-        <div className='Phone animated bounceInRight'>
-            <h2>Ya con esta acabamos!</h2>
+        <div className='Phone animated pulse'>
+            <h2>Ya casi acabamos!</h2>
             <label
                 htmlFor="phone1">Teléfono movil</label>
             <input

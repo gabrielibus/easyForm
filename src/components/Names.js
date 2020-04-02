@@ -3,7 +3,7 @@ import React from 'react'
 function Names(props) {
 
     return (
-        <div className='Names animated bounceInRight'>
+        <div className='Names animated pulse'>
             <h2>Cuéntanos sobre ti</h2>
             <label htmlFor="names">Nombres</label>
             <input id='focus'

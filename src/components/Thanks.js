@@ -3,9 +3,9 @@ import React from 'react'
 function Thanks(props) {
 
     return (
-        <div className='Phone animated bounceInRight'>
-            <h1>¡Gracias!</h1>
-            <h2>Tu información ha sido <br/> enviada correctamente</h2>
+        <div className='Phone animated pulse'>
+            <h2>¡Gracias!</h2>
+            <h3>Tu información ha sido enviada correctamente</h3>
             <button onClick={props.onClick}>Reiniciar</button>
         </div>
     )
