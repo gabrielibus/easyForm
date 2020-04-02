@@ -3,6 +3,7 @@ import "./styles/App.css"
 import Names from "./components/Names"
 import Address from "./components/Address"
 import Phone from "./components/Phone"
+import Thanks from "./components/Thanks"
 
 function App() {
   const [datos, setDatos] = useState({})
@@ -12,12 +13,11 @@ function App() {
     setDatos({ ...datos, [event.target.className]: event.target.value })
   }
 
-
   const sendInfo = () => {
     localStorage.setItem("data", datos)
   }
 
-  useEffect(() => document.getElementById("focus").focus(), [screen])
+  useEffect(() => document.getElementById("focus").focus(), [screen === (1 || 2 || 3)])
 
   return (
     <div className='App'>
@@ -35,14 +35,17 @@ function App() {
           onClick={() => setScreen(3)}
           onChange={event => setData(event)}
         />
-      ) : (
+      ) : screen === 3 ? (
         <Phone
           onClick={() => {
-            setScreen(1)
+            setScreen(4)
             sendInfo()
           }}
           onChange={event => setData(event)}
         />
+      ) : (
+        <Thanks 
+        onClick={() => window.location.reload(true)}/>
       )}
     </div>
   )

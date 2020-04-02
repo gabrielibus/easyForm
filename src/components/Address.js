@@ -3,6 +3,7 @@ import React from 'react'
 function Address(props) {
     return (
         <div className='Address animated bounceInRight' >
+            <h2>Necesitamos algunos datos más</h2>
             <label htmlFor="dir">Dirección</label>
             <input
                 id='focus'
