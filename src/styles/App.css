@@ -40,7 +40,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 
 button {
-    width: 5rem;
+    width: 10rem;
     background-color: white;
     border: none;
     padding: 0.75rem;

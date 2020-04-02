@@ -19,7 +19,7 @@ function Phone(props) {
                 placeholder='7775555'
                 onChange={(event) => props.onChange(event)} />
             <div className='button'>
-                <button onClick={props.order}>next</button>
+                <button onClick={props.onClick}>Finalizar</button>
             </div>
         </div>
     )

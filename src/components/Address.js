@@ -18,7 +18,7 @@ function Address(props) {
                 placeholder='Urbanización la Campiña, Apartamento 401. Frente al Parque AguasClaras.' onChange={(event) => props.onChange(event)}
             />
             <div className='button'>
-                <button onClick={props.order}>next</button>
+                <button onClick={props.onClick}>siguiente</button>
             </div>
         </div>
     )

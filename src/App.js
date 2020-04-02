@@ -12,6 +12,10 @@ function App() {
     setDatos({ ...datos, [event.target.className]: event.target.value })
   }
 
+  const sendInfo = () => {
+    localStorage.setItem('data', datos)
+  }
+
   useEffect(() => document.getElementById("focus").focus(), [screen])
 
   return (
@@ -25,13 +29,13 @@ function App() {
         />
       ) : screen === 2 ? (
         <Address
-          order={() => setScreen(3)}
+          onClick={() => setScreen(3)}
           onChange={event => setData(event)}
         />
       ) : (
         <Phone
-          order={() => setScreen(1)}
-          onChange={event => setData(event)}
+          onClick={() => setScreen(1)}
+          onChange={event => {setData(event); sendInfo()}}
         />
       )}
     </div>

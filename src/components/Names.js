@@ -17,7 +17,7 @@ function Names(props) {
                 placeholder='Pérez'
                 onChange={(event) => props.onChange(event)} />
             <div className='btnDiv'>
-                <button onClick={props.onClick}>next</button>
+                <button onClick={props.onClick}>siguiente</button>
             </div>
         </div>
     )
