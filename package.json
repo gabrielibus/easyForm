@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "CI= react-scripts build",
     "git": "git add . && git commit -m ",
     "push": "git push --all",
     "test": "react-scripts test",
