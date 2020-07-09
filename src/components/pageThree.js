@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Phone(props) {
+function pageThree(props) {
 
     return (
         <div className='Phone animated pulse'>
@@ -26,4 +26,4 @@ function Phone(props) {
     )
 }
 
-export default Phone
+export default pageThree

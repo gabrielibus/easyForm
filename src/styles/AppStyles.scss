@@ -1,0 +1,109 @@
+$defBorderRadius: 3px;
+$bgColor: #f6f6f6;
+$fieldsBG: white;
+// $shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+$shadow: 0;
+
+.test {
+  color: lightgray;
+}
+
+.App {
+  color: black;
+  font-family: "Lato", sans-serif;
+  background-color: $bgColor;
+  font-size: 18px;
+  text-align: left;
+  max-width: 400px;
+  margin: auto;
+}
+
+.AppWrapper {
+  max-width: 95%;
+  margin: auto;
+  padding-top: 0.5rem;
+}
+
+.headerWrapper {
+  width: 95%;
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+
+.headerWrapper p {
+  text-align: left;
+}
+
+.AppBodyWrapper {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.AppBodyWrapper h3 {
+  text-align: center;
+}
+
+.fieldsWrapper {
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+input,
+textarea {
+  height: 2.5rem;
+  border-radius: $defBorderRadius;
+  border: 1px solid lightgrey;
+  margin: 0;
+  padding: 0.25rem 0.75rem;
+  text-align: left;
+  background-color: $fieldsBG;
+  box-shadow: $shadow;
+}
+
+#fieldsWrapper3,
+#fieldsWrapper9 {
+  width: 48%;
+  margin-left: 0rem;
+}
+#fieldsWrapper4,
+#fieldsWrapper10 {
+  width: 48%;
+  margin-right: 0rem;
+}
+
+.field4,
+.field10 {
+  background-color: $fieldsBG;
+}
+
+.field5,
+.field11 {
+  padding-top: 0.5rem;
+}
+
+.field6,
+.field12 {
+  padding-top: 0.5rem;
+  min-height: 65px;
+}
+
+.btnWrapper {
+  width: 100%;
+  text-align: right;
+}
+
+button {
+  border: none;
+  padding: 1rem;
+  margin-right: 0.5rem;
+  background-color: rgb(255, 187, 61);
+margin-bottom: 1rem;
+}

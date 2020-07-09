@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react"
-import "./styles/App.css"
-import Names from "./components/Names"
-import Address from "./components/Address"
-import Phone from "./components/Phone"
+import "./styles/AppStyles.scss"
+import PageOne from "./components/pageOne"
 import Thanks from "./components/Thanks"
+import putData from "./db/digest"
 
 const url = "http://localhost:3001/api/v1/"
 
@@ -11,58 +10,44 @@ function App() {
   const [datos, setDatos] = useState({})
   const [screen, setScreen] = useState(1)
 
-  const setData = event => {
+  const setData = (event) => {
     setDatos({ ...datos, [event.target.className]: event.target.value })
   }
 
   const sendInfo = () => {
-    localStorage.setItem("data", datos)
+    putData(datos)
+    // localStorage.setItem("data", datos)
   }
 
   const finish = async () => {
-    var myHeaders = new Headers()
-    myHeaders.append("Content-Type", "application/json")
-    var raw = JSON.stringify(datos)
-    
-    var requestOptions = {
-      method: "POST",
-      headers: myHeaders,
-      body: raw,
-      redirect: "follow"
-    }
-    
-    fetch(`${url}post/`, requestOptions)
-    .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log("error", error))
+    // var myHeaders = new Headers()
+    // myHeaders.append("Content-Type", "application/json")
+    // var raw = JSON.stringify(datos)
+
+    // var requestOptions = {
+    //   method: "POST",
+    //   headers: myHeaders,
+    //   body: raw,
+    //   redirect: "follow"
+    // }
+
+    // fetch(`${url}post/`, requestOptions)
+    // .then(response => response.text())
+    // .then(result => console.log(result))
+    // .catch(error => console.log("error", error))
     window.location.reload(true)
   }
-
-  useEffect(() => document.getElementById("focus").focus(), [screen ===  2 || 3])
 
   return (
     <div className='App'>
       {screen === 1 ? (
-        <Names
+        <PageOne
           onClick={() => {
-            setScreen(2)
-          }}
-          onChange={event => {
-            setData(event)
-          }}
-        />
-      ) : screen === 2 ? (
-        <Address
-          onClick={() => setScreen(3)}
-          onChange={event => setData(event)}
-        />
-      ) : screen === 3 ? (
-        <Phone
-          onClick={() => {
-            setScreen(4)
             sendInfo()
           }}
-          onChange={event => setData(event)}
+          onChange={(event) => {
+            setData(event)
+          }}
         />
       ) : (
         <Thanks onClick={() => finish()} />
