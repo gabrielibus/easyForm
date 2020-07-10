@@ -31,20 +31,21 @@ $shadow: 0;
   margin: auto;
 }
 
-.headerWrapper p {
+.AppText {
   text-align: left;
 }
 
-.AppBodyWrapper {
+.formsWrapper {
   width: 95%;
-  margin: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin: auto;
 }
 
-.AppBodyWrapper h3 {
-  text-align: center;
+.formsWrapperTitle {
+  margin: auto;
+  margin-bottom: 1rem;
 }
 
 .fieldsWrapper {

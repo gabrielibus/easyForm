@@ -1,39 +1,35 @@
 import React from "react"
 const info = require("../models/model")
+
 let mapArray = Object.entries(info.fields)
 
 function pageOne() {
+  function Forms({ form }) {
+    let res = form.map((field, idx) => (
+      <div className={`fieldsWrapper`} id={`fieldsWrapper${idx + 1}`} key={idx}>
+        <label htmlFor={`field${idx + 1}`}>{field.label}</label>
+        {React.createElement(`${field.tag}`, {
+          className: `field${idx + 1}`,
+          type: field.type,
+          placeholder: `${field.placeholder}`,
+        })}
+      </div>
+    ))
+    return res
+  }
+
   return (
     <div className='AppWrapper'>
       <div className='headerWrapper'>
-        <h2>{info.site.title}</h2>
-        <p>{info.site.description}</p>
+        <h2 className='AppTitle'>{info.site.title}</h2>
+        <p className='AppText'>{info.site.description}</p>
       </div>
-      <div className='AppBodyWrapper'>
-        {mapArray.map((field, idx) => (
-          <div
-            className={`fieldsWrapper`}
-            id={`fieldsWrapper${idx + 1}`}
-            key={idx}>
-            <label htmlFor={`field${idx + 1}`}>{field[1].label}</label>
-            {field[1].tag === "input" ? (
-              <input
-                className={`field${idx + 1}`}
-                type={field[1].type}
-                placeholder={`${field[1].placeholder}`}
-              />
-            ) : field[1].tag === "textarea" ? (
-              <textarea
-                className={`field${idx + 1}`}
-                type={field[1].type}
-                placeholder={`${field[1].placeholder}`}
-              />
-            ) : (
-              <h3>{field[1].tag}</h3>
-            )}
-          </div>
-        ))}
-      </div>
+      {mapArray.map((form, idx) => (
+        <div key={idx} className='formsWrapper'>
+          <h4 className='formsWrapperTitle'>Datos de {form[0]}</h4>
+          <Forms form={form[1]} />
+        </div>
+      ))}
       <div className='btnWrapper'>
         <button>{info.site.btnText}</button>
       </div>
