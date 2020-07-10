@@ -1,11 +1,12 @@
-$defBorderRadius: 3px;
-$bgColor: #f6f6f6;
+$defBorderRadius: 15px;
+$bgColor: #cfd8dc;
 $fieldsBG: white;
-// $shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-$shadow: 0;
+$btnBg: #8e0038;
+$btnText: #ffffff;
+$shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 
 .test {
-  color: lightgray;
+  color: teal;
 }
 
 .App {
@@ -19,33 +20,64 @@ $shadow: 0;
 }
 
 .AppWrapper {
-  max-width: 95%;
+  max-width: 100%;
   margin: auto;
-  padding-top: 0.5rem;
+  padding-top: 0rem;
 }
 
 .headerWrapper {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.headerImgContainer {
+  height: 60px;
+  width: 60px;
+}
+
+.headerLogo {
+  width: 100%;
+  height: 100%;
+}
+
+.headerTitle {
+  padding-left: 1rem;
+}
+
+.headerText {
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
+  width: 80% !important;
+}
+
+.bodyWrapper {
   width: 95%;
-  text-align: center;
-  display: block;
   margin: auto;
 }
 
-.AppText {
+.headerText {
   text-align: left;
+  width: 95%;
+  margin: auto;
 }
 
 .formsWrapper {
-  width: 95%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin: auto;
+  margin-bottom: 1rem;
 }
 
 .formsWrapperTitle {
-  margin: auto;
-  margin-bottom: 1rem;
+  margin: 1rem auto;
 }
 
 .fieldsWrapper {
@@ -69,33 +101,26 @@ textarea {
   box-shadow: $shadow;
 }
 
-#fieldsWrapper3,
-#fieldsWrapper9 {
+label {
+  padding-left: 0.3rem;
+}
+
+#fieldsWrapper2,
+#fieldsWrapper7 {
   width: 48%;
   margin-left: 0rem;
 }
-#fieldsWrapper4,
-#fieldsWrapper10 {
+#fieldsWrapper3,
+#fieldsWrapper8 {
   width: 48%;
   margin-right: 0rem;
 }
 
 .field4,
-.field10 {
-  background-color: $fieldsBG;
+.field5 {
+  padding-top: 1rem;
+  min-height: 60px;
 }
-
-.field5,
-.field11 {
-  padding-top: 0.5rem;
-}
-
-.field6,
-.field12 {
-  padding-top: 0.5rem;
-  min-height: 65px;
-}
-
 .btnWrapper {
   width: 100%;
   text-align: right;
@@ -105,6 +130,9 @@ button {
   border: none;
   padding: 1rem;
   margin-right: 0.5rem;
-  background-color: rgb(255, 187, 61);
+  background-color: $btnBg;
+  color: $btnText;
   margin-bottom: 1rem;
+  border-radius: $defBorderRadius;
+  box-shadow: $shadow;
 }

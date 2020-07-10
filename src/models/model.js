@@ -1,6 +1,6 @@
 let info = {
   site: {
-    title: "Bienvenido a Indutrámites",
+    title: "Indutrámites",
     description: `Cuéntanos qué debemos hacer, a dónde debemos ir o qué favor quieres que hagamos por ti.
     Necesitaremos los siguientes datos: `,
     btnText: "Enviar información",
