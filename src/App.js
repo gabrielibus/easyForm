@@ -1,17 +1,20 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import "./styles/AppStyles.scss"
-import PageOne from "./components/pageOne"
+import Header from "./components/Header"
+import Button from "./components/Button"
+import Forms from "./components/Forms.jsx"
 import Thanks from "./components/Thanks"
 import putData from "./db/digest"
+import Terms from "./components/Terms"
 
-const url = "http://localhost:3001/api/v1/"
+// const url = "http://localhost:3001/api/v1/"
 
 function App() {
   const [datos, setDatos] = useState({})
-  const [screen, setScreen] = useState(1)
 
-  const setData = (event) => {
+  const saveData = (event) => {
     setDatos({ ...datos, [event.target.className]: event.target.value })
+    console.log(datos)
   }
 
   const sendInfo = () => {
@@ -25,18 +28,11 @@ function App() {
 
   return (
     <div className='App'>
-      {screen === 1 ? (
-        <PageOne
-          onClick={() => {
-            sendInfo()
-          }}
-          onChange={(event) => {
-            setData(event)
-          }}
-        />
-      ) : (
-        <Thanks onClick={() => finish()} />
-      )}
+      <Header />
+      <Forms onchange={(event) => saveData(event)} />
+      <Terms />
+      <Button onclick={() => sendInfo()}/>
+      <Thanks onClick={() => finish()} />
     </div>
   )
 }

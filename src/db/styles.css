@@ -1,0 +1,75 @@
+body {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.ContenedorA {
+    width: 50%;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+}
+
+.ContenedorB {
+    width: 50%;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    background-color: tan;
+}
+.ContenedorC {
+    width: 50%;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    background-color: tomato;
+}
+.ContenedorD {
+    width: 50%;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    background-color: lightcyan;
+}
+
+.contenedor1 {
+    width: 50%;
+    background-color: teal;
+
+}
+.contenedor2 {
+    width: 50%;
+    background-color: blue;
+}
+
+.contenedor3 {
+    width: 50%;
+    background-color: red;
+
+}
+.contenedor4 {
+    width: 50%;
+    background-color: green;
+}
+
+.contenedor6 {
+    width: 50%;
+    background-color: teal;
+
+}
+.contenedor5 {
+    width: 50%;
+    background-color: blue;
+}
+
+.contenedor8 {
+    width: 50%;
+    background-color: red;
+
+}
+.contenedor7 {
+    width: 50%;
+    background-color: green;
+}
