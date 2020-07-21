@@ -5,10 +5,37 @@ function Forms({ onchange }) {
   let infoFields = Object.entries(info.fields) // [["regogida", {...}], ...]
 
   let styles = {
-    phone1: {
-      color: "red",
-      pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}",
+    recogidafield1: {
+      autofocus: "",
     },
+    recogidafield3: {
+      cols: "40",
+      rows: "80",
+      type: "date",
+      autocomplete: "on",
+    },
+  }
+
+  let VariableTag = ({props}) => {
+    if (props.field.tag === "textarea") {
+      return (
+        <textarea
+          className={`${props.form[0]}field${props.idx + 1}`}
+          placeholder={`${props.field.placeholder}`}
+          style={styles[`${props.form[0]}field${props.idx + 1}`]}
+          onChange={(event) => onchange(event)}
+        />
+      )
+    } else {
+      return (
+        <input
+          className={`${props.form[0]}field${props.idx + 1}`}
+          placeholder={`${props.field.placeholder}`}
+          style={styles[`${props.form[0]}field${props.idx + 1}`]}
+          onChange={(event) => onchange(event)}
+        />
+      )
+    }
   }
 
   return (
@@ -31,13 +58,8 @@ function Forms({ onchange }) {
                 id={`fieldsWrapper${idx + 1}`}
                 key={idx}>
                 <label htmlFor={`field${idx + 1}`}>{field.label}</label>
-                <input
-                  className={field.name}
-                  type={field.type}
-                  pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
-                  placeholder={`${field.placeholder}`}
-                  style={styles[field.name]}
-                  onChange={(event) => onchange(event)}
+                <VariableTag
+                  props={{ idx, form, field }}
                 />
               </div>
             ))}

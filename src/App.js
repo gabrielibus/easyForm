@@ -3,7 +3,7 @@ import "./styles/AppStyles.scss"
 import Header from "./components/Header"
 import Button from "./components/Button"
 import Forms from "./components/Forms.jsx"
-import Thanks from "./components/Thanks"
+// import Thanks from "./components/Thanks"
 import putData from "./db/digest"
 import Terms from "./components/Terms"
 
@@ -14,25 +14,26 @@ function App() {
 
   const saveData = (event) => {
     setDatos({ ...datos, [event.target.className]: event.target.value })
-    console.log(datos)
   }
 
   const sendInfo = () => {
-    putData(datos)
+    putData({id: 2, productName: "frontend"})
+    console.log('working')
+      // window.location.reload(true)
+    // putData(datos)
     // localStorage.setItem("data", datos)
   }
 
-  const finish = () => {
-    window.location.reload(true)
-  }
+  // const finish = () => {
+  // }
 
   return (
     <div className='App'>
       <Header />
       <Forms onchange={(event) => saveData(event)} />
       <Terms />
-      <Button onclick={() => sendInfo()}/>
-      <Thanks onClick={() => finish()} />
+      <Button action={() => sendInfo()} />
+      {/* <Thanks onClick={() => finish()} /> */}
     </div>
   )
 }

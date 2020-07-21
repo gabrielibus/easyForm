@@ -3,10 +3,10 @@ import "../styles/AppStyles.scss"
 const info = require("../models/model")
 
 
-function Button( { onclick }) {
+function Button( { action }) {
     return (
-        <div className='btnWrapper'>
-          <button onClick={() => onclick}>{info.site.btnText}</button>
+        <div className='btnWrapper' onClick={ action }>
+          <button className='sendBtn' >{info.site.btnText}</button>
         </div>
       )
 }
