@@ -3,6 +3,12 @@ const info = require("../models/model")
 
 function Forms({ onchange }) {
   let infoFields = Object.entries(info.fields) // [["regogida", {...}], ...]
+  // document.getElementById('name1').value = "13-12-1982";
+
+  let today = () => {
+    let now = new Date().toJSON().slice(0,10)
+    return now
+  }
 
   return (
     <div className='AppWrapper'>
@@ -25,9 +31,11 @@ function Forms({ onchange }) {
                 key={idx}>
                 <label htmlFor={`field${idx + 1}`}>{field.label}</label>
                 <input
+                  value={field.type === "date" ? today() : undefined}
+                  id={field.name}
+                  autoComplete="on"
                   className={field.name}
                   type={field.type}
-                  pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
                   placeholder={`${field.placeholder}`}
                   onChange={(event) => onchange(event)}
                 />

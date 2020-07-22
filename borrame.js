@@ -3,7 +3,9 @@ let n = 12;
 // let arreglo = [1,2,3,4,5]
 
 let getUniqueID = () => {
-  return Math.random().toString().substr(2, 5)
+  
+    var local = new Date();
+    return(local.toJSON().slice(0,10));
 };
 
 
