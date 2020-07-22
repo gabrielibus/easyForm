@@ -4,13 +4,6 @@ const info = require("../models/model")
 function Forms({ onchange }) {
   let infoFields = Object.entries(info.fields) // [["regogida", {...}], ...]
 
-  let styles = {
-    phone1: {
-      color: "red",
-      pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}",
-    },
-  }
-
   return (
     <div className='AppWrapper'>
       <div className='bodyWrapper'>
@@ -36,7 +29,6 @@ function Forms({ onchange }) {
                   type={field.type}
                   pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
                   placeholder={`${field.placeholder}`}
-                  style={styles[field.name]}
                   onChange={(event) => onchange(event)}
                 />
               </div>

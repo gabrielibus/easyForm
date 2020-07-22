@@ -8,14 +8,14 @@ let info = {
   fields: {
     form1: [
       {
-        name: "name",
+        name: "name1",
         label: "Nombres de quien entrega",
         placeholder: "Juan Pérez",
         type: "text",
         tag: "input",
       },
       {
-        name: "phone",
+        name: "phone1",
         label: "Teléfono 1",
         placeholder: "300-777-33-33",
         type: "tel",

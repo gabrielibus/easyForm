@@ -17,22 +17,20 @@ function App() {
   }
 
   const sendInfo = () => {
-    putData({id: 2, productName: "frontend"})
-    console.log('working')
-      // window.location.reload(true)
-    // putData(datos)
-    // localStorage.setItem("data", datos)
+    putData(datos)
   }
 
-  // const finish = () => {
-  // }
+  const finish = () => {
+    sendInfo()
+    // window.location.reload(true)
+  }
 
   return (
     <div className='App'>
       <Header />
       <Forms onchange={(event) => saveData(event)} />
       <Terms />
-      <Button action={() => sendInfo()} />
+      <Button action={() => finish()} />
       {/* <Thanks onClick={() => finish()} /> */}
     </div>
   )
