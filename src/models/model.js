@@ -17,7 +17,7 @@ let info = {
       {
         name: "phone1",
         label: "Teléfono 1",
-        placeholder: "300-777-33-33",
+        placeholder: "300 7773333",
         type: "tel",
         tag: "input",
       },
@@ -55,7 +55,7 @@ let info = {
       {
         name: "phone2",
         label: "Teléfono 2",
-        placeholder: "300-777-33-33",
+        placeholder: "300 7773333",
         type: "tel",
         tag: "input",
       },

@@ -31,7 +31,6 @@ function Forms({ onchange }) {
                 key={idx}>
                 <label htmlFor={`field${idx + 1}`}>{field.label}</label>
                 <input
-                  
                   defaultValue={field.type === "date" ? today() : undefined}
                   id={field.name}
                   autoComplete="on"
