@@ -7,8 +7,6 @@ import Forms from "./components/Forms.jsx";
 import putData from "./db/digest";
 import Terms from "./components/Terms";
 
-// const url = "http://localhost:3001/api/v1/"
-
 function App() {
   const [datos, setDatos] = useState({});
 
