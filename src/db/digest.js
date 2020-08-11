@@ -49,7 +49,7 @@ const putData = (data) => {
   fetch(
     // "http://localhost:3001/api/v1/post",
     // "http://52.91.153.228:3001/api/v1/post",
-    "https://infinite-escarpment-14960.herokuapp.com/",
+    "https://infinite-escarpment-14960.herokuapp.com/api/v1/post",
     // "https://2noi9jhrr3.execute-api.us-east-1.amazonaws.com/dev",
     requestOptions
   )
